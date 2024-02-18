@@ -12,10 +12,10 @@
 6. [Questions](#Questions?????!)
 
 ## Description <a name="Description"></a>
-This is a mostly functional mockup of how a blog site could be setup with express and sql.
+This is a mostly functional mockup of how a blog site could be setup with express and sql, meant to demonstrate the MVC file structure.
 
 ## Installation <a name="Installation"></a>
-this is meant to be a deployed website.
+This app is meant to be a deployed website.
 
 ## Usage Information <a name="Usage"></a>
 https://tech-blog-50000.onrender.com  (currently does not work will update readme when it does)<br>
