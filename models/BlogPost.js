@@ -12,7 +12,7 @@ BlogPost.init(
             primaryKey: true,
             autoIncrement: true
         },
-        username:{
+        user_id:{
             type: DataTypes.INTEGER,
             allowNull: false,
             references:{
@@ -20,7 +20,7 @@ BlogPost.init(
                 key: 'user_id'
             }
         },
-        content: {
+        postContent: {
             type: DataTypes.STRING,
             allowNull: false,
         }
