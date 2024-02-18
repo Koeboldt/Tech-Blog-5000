@@ -10,7 +10,15 @@
         <h1>myspace or something idk</h1>
         {{#if loggedIn}}
             <div id="navBar">
+                <a href="/"><button id="homeLink" >Home</button></a>  
+                <a href="/posts"><button id="postsLink">Blog</button></a> 
+                <a href="/profile"><button id="profileLink" >My Profile</button></a>
                 <button id="logoutHandler">Logout</button>
+            </div>
+        {{else}}
+            <div id="navBar">
+              <a href="/signup"><button id="signupLink">Sign up</button></a> 
+              <a href="/login"><button id="loginLink" >Log in</button></a> 
             </div>
         {{/if}}
     </header>

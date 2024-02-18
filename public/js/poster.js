@@ -13,4 +13,4 @@ async function postHandler(e){
         alert("post failed please try again.")
     }
 }
-document.querySelector('#postHandler').addEventListener('submit', postCreate)
+document.querySelector('#postHandler').addEventListener('submit', postHandler)
