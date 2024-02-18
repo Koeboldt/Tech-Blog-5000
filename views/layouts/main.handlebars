@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tech-Blog-5000</title>
 </head>
 <body>
     <header>
         <h1>myspace or something idk</h1>
+        {{#if loggedIn}}
+            <div id="navBar">
+                <button id="logoutHandler">Logout</button>
+            </div>
+        {{/if}}
     </header>
+    <div>
     {{{body}}}
+    </div>
+
+
+
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}}
 </body>
 </html>
