@@ -23,6 +23,10 @@ router.get('/login', (req, res) => {
 
 router.get('/signup', async (req, res) => {
     try {
+        if (req.session.loggedIn) {
+            res.redirect('/');
+            return;
+        }
         res.render('signup', {
             loggedIn: req.session.loggedIn,
         });
@@ -48,10 +52,8 @@ router.get('/posts', withAuth, async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
     try {
         res.render('profile', {
-            session: req.session,
             user: await getUser(req.session.user_id),
             loggedIn: req.session.loggedIn,
-            posts: await getUserPosts(req.session.user_id)
         })
     } catch (err) {
         console.log(err);
@@ -67,12 +69,3 @@ const user = await User.findOne({
 })
 return user.get({plain: true})
 }
-
-async function getUserPosts(userId){
-    const userPosts = await BlogPost.findByPk({
-        where: {
-            user_id: userId
-        }
-    })
-    return userPosts.get({plain: true})
-    }

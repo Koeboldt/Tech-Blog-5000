@@ -1,7 +1,16 @@
 <h1>posts</h1>
-<li>
+<div>
+    <form id="postHandler">
+        <div>
+            <input type="content" id="postContent" placeholder="say something about tech">
+        </div>
+        <button type="submit"> Submit</button>
+    </form>
+</div>
+<ul>
     {{#each blog as |blog|}}
+    <li>{{blog.postContent}}</li>
     {{/each}}
-</li>
+</ul>
 
 <script src="/js/poster.js"></script>
