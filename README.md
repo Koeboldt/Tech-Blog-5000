@@ -15,10 +15,10 @@
 This is a mostly functional mockup of how a blog site could be setup with express.
 
 ## Installation <a name="Installation"></a>
-Download the required files from the GitHub repository.
+this is meant to be a deployed website.
 
 ## Usage Information <a name="Usage"></a>
-Run either through console commands, or open in a node compatible code editor and enter node index.js into the terminal. To test the routes, open a program like Insomnia to allow you to perform the get, post, update, and delete routes.
+Click on the links of the navbar to be taken to the different pages. If you are not logged in it will not let you view any pages but the log in or sign up pages, and to sign up just fill out the form with the required information and then log in with the information you signed up with. Then once logged in you can view the home page, blog page, and profile page. Currently only the blog page has anything on it, which to create a post just type your post out in the field and click submit, then your post will be added to the "blog". The logout button is also functioning and will clear your session so you will need to log in again.
 
 
 ## Contribution Instructions <a name="Contribution"></a>
@@ -28,7 +28,7 @@ This is a solo project, so if you'd like to contribute please ask.
 N/A
 
 ## Testing Instructions <a name="Testing"></a>
-To test, use the API routes in a program such as Insomnia as indicated by the route paths in the files.
+N/A
 
 ## Questions? <a name="Questions?????!"></a>
 For questions you can reach me at:
