@@ -12,7 +12,7 @@
 6. [Questions](#Questions?????!)
 
 ## Description <a name="Description"></a>
-This is a mostly functional mockup of how a blog site could be setup with express.
+This is a mostly functional mockup of how a blog site could be setup with express and sql.
 
 ## Installation <a name="Installation"></a>
 this is meant to be a deployed website.
