@@ -3,8 +3,8 @@ require('dotenv').config();
 
 let sequelize;
 
-if (process.env.POSTGRES_DB) {
-  sequelize = new Sequelize(process.env.POSTGRES_DB);
+if (process.env.DB_URL) {
+  sequelize = new Sequelize(process.env.DB_URL);
 } else {
   sequelize = new Sequelize(
     process.env.DB_NAME,
@@ -12,7 +12,7 @@ if (process.env.POSTGRES_DB) {
     process.env.DB_PASSWORD,
     {
       host: 'localhost',
-      dialect: 'mysql',
+      dialect: 'postgres',
     }
   );
 }
