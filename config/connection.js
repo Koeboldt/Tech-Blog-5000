@@ -13,7 +13,6 @@ if (process.env.POSTGRES_DB) {
     {
       host: 'localhost',
       dialect: 'mysql',
-      port: 3306
     }
   );
 }
