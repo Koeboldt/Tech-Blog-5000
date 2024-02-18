@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User} = require('../../models');
 
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
     try {
         const dbUserData = await User.create({
             username: req.body.username,
@@ -26,12 +26,12 @@ router.post('/login', async (req, res) => {
             },
         });
         if (!userLoginData) {
-            res.status(404).json({ message: 'username or password incorrect please try again' });
+            res.status(404).json({ message: 'login failed incorrect please try again' });
             return;
         }
         const password = await userLoginData.checkPassword(req.body.password);
         if (!password) {
-            res.status(404).json({ message: 'username or password incorrect please try again' });
+            res.status(404).json({ message: 'login failed please try again' });
             return;
         }
         req.session.save(() => {

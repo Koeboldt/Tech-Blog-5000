@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { BlogPost,User} = require('../models');
+const withAuth = require('../utils/auth.js');
 module.exports = router;
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         res.render('home', {
             loggedIn: req.session.loggedIn,
@@ -10,6 +11,14 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
+});
+
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('login');
 });
 
 router.get('/signup', async (req, res) => {
@@ -22,7 +31,7 @@ router.get('/signup', async (req, res) => {
     }
 });
 
-router.get('/posts', async (req, res) => {
+router.get('/posts', withAuth, async (req, res) => {
     try {
         const BlogPostData = await BlogPost.findAll();
         const blog = BlogPostData.map((project) => project.get({ plain: true }));
@@ -35,10 +44,11 @@ router.get('/posts', async (req, res) => {
         res.status(500).json(err);
     }
 });
-// doesn't work yet because I forgot to use session currently.
-router.get('/profile', async (req, res) => {
+
+router.get('/profile', withAuth, async (req, res) => {
     try {
         res.render('profile', {
+            session: req.session,
             user: await getUser(req.session.user_id),
             loggedIn: req.session.loggedIn,
             posts: await getUserPosts(req.session.user_id)
